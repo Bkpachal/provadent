@@ -1,0 +1,44 @@
+:root{--ink:#14172b;--navy:#10132a;--gold:#c9a24b;--cream:#f7f0e1;--paper:#fff;--muted:#6b6f80;--line:#e6dfcc}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.6;background:var(--paper)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .6rem}
+h1{font-size:clamp(2.2rem,5vw,3.6rem)}h2{font-size:clamp(1.8rem,3.5vw,2.6rem);text-align:center}h2.left{text-align:left}
+h3{font-size:1.15rem}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}.narrow{max-width:760px}
+.topbar{background:var(--navy);color:#cfd2e3;font-size:.75rem;text-align:center;padding:8px 16px}
+.nav{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5}
+.navin{display:flex;align-items:center;gap:20px;height:56px}
+.brand{font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem}
+.links{display:flex;gap:16px;margin-left:auto;font-size:.85rem}.links a{text-decoration:none;color:#cfd2e3}
+.hero{background:linear-gradient(180deg,var(--cream),#fff);padding:64px 0 48px}
+.eyebrow{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#8a6b1f;font-weight:700;margin-bottom:12px}
+.eyebrow.center{text-align:center}.eyebrow.gold{color:var(--gold)}
+.lead{font-size:1.05rem;color:#3b3f55;max-width:640px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 12px}
+.btn{display:inline-block;background:var(--gold);color:#1a1405;font-weight:700;padding:12px 22px;border-radius:6px;text-decoration:none}
+.btn:hover{filter:brightness(1.07)}.btn.small{padding:8px 14px;font-size:.82rem}.btn.block{display:block;text-align:center}
+.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.muted{color:var(--muted)}.small{font-size:.8rem}
+.stats{background:var(--navy);color:#fff;padding:28px 0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.grid4 b{display:block;font-size:1.7rem;font-family:Georgia,serif;color:var(--gold)}.grid4 span{font-size:.75rem;color:#b9bdd2}
+.sec{padding:72px 0}.sec.alt{background:#faf7ef}.sec.dark{background:var(--navy);color:#fff}
+.sub{text-align:center;max-width:680px;margin:0 auto 36px;color:#4a4e63}.sec.dark .sub{color:#b9bdd2}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:8px;padding:22px;display:block;text-decoration:none}
+.card.light{color:var(--ink)}.card ul,.pricebox ul{padding-left:18px;margin:10px 0 0}.card li,.pricebox li{margin-bottom:8px;font-size:.92rem}
+.card p{margin:0;color:#4a4e63;font-size:.92rem}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--cream);color:#8a6b1f;padding:3px 8px;border-radius:4px;margin-bottom:10px}
+.num{display:block;font-family:Georgia,serif;font-size:1.8rem;color:var(--gold);margin-bottom:6px}
+.note{background:var(--cream);border-left:4px solid var(--gold);padding:14px 18px;border-radius:4px;margin-top:28px;font-size:.92rem}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:start}
+.pricebox{background:#fff;border:1px solid var(--gold);border-radius:12px;padding:26px}
+.price{font-family:Georgia,serif;font-size:3.2rem;margin:6px 0}
+.verdict{text-align:center;max-width:680px;margin:32px auto 0;color:#d9dcec}
+details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0;color:#4a4e63}
+.cta-final{background:linear-gradient(135deg,var(--navy),#3a2a4f);color:#fff;text-align:center;padding:72px 0}
+.cta-final p{color:#cfd2e3}
+.footer{background:#0a0c1e;color:#aeb2c9;padding:36px 0;font-size:.82rem}.footer strong{color:#fff}
+@media(max-width:800px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3,.grid2,.two{grid-template-columns:1fr}.links{display:none}.nav .btn{margin-left:auto}}
