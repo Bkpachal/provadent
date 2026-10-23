@@ -6,6 +6,9 @@ const path = require("path");
 const ROOT = __dirname;
 const DIST = path.join(ROOT, "dist");
 const site = JSON.parse(fs.readFileSync(path.join(ROOT, "site.json"), "utf8"));
+// If PRODUCT env var is set (e.g. PRODUCT=mitolyn-review), only that product is built
+// and its landing page becomes the home page (index.html) of the deployment.
+const ONLY = (process.env.PRODUCT || "").trim();
 
 const esc = (s = "") =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -44,7 +47,8 @@ ${body}
 }
 
 function productPage(p) {
-  const url = `${site.siteUrl.replace(/\/$/, "")}/${p.slug}`;
+  const baseUrl = (p.siteUrl || site.siteUrl).replace(/\/$/, "");
+  const url = ONLY ? baseUrl : `${baseUrl}/${p.slug}`;
   const cta = (cls = "btn") =>
     `<a class="${cls}" href="${esc(p.affiliateUrl)}" target="_blank" rel="sponsored noopener noreferrer">${esc(p.ctaText || "View Current Offer")} &#8599;</a>`;
 
@@ -180,16 +184,27 @@ fs.mkdirSync(path.join(DIST, "assets"), { recursive: true });
 fs.copyFileSync(path.join(ROOT, "assets", "styles.css"), path.join(DIST, "assets", "styles.css"));
 
 const files = fs.readdirSync(path.join(ROOT, "products")).filter((f) => f.endsWith(".json") && !f.startsWith("_"));
-const products = files.map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, "products", f), "utf8")));
+let products = files.map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, "products", f), "utf8")));
 
-for (const p of products) {
-  fs.writeFileSync(path.join(DIST, `${p.slug}.html`), productPage(p));
-  console.log("built", p.slug);
+if (ONLY) {
+  products = products.filter((p) => p.slug === ONLY);
+  if (!products.length) {
+    console.error(`PRODUCT="${ONLY}" not found. Check the slug inside products/*.json`);
+    process.exit(1);
+  }
+  // Single-product mode: landing page is the home page.
+  fs.writeFileSync(path.join(DIST, "index.html"), productPage(products[0]));
+  console.log("built (as home page):", ONLY);
+} else {
+  for (const p of products) {
+    fs.writeFileSync(path.join(DIST, `${p.slug}.html`), productPage(p));
+    console.log("built", p.slug);
+  }
+  fs.writeFileSync(path.join(DIST, "index.html"), indexPage(products));
 }
-fs.writeFileSync(path.join(DIST, "index.html"), indexPage(products));
 
-const base = site.siteUrl.replace(/\/$/, "");
-const urls = ["", ...products.map((p) => "/" + p.slug)];
+const base = ((ONLY && products[0].siteUrl) || site.siteUrl).replace(/\/$/, "");
+const urls = ONLY ? [""] : ["", ...products.map((p) => "/" + p.slug)];
 fs.writeFileSync(
   path.join(DIST, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${base}${u}</loc></url>`).join("\n")}\n</urlset>\n`
