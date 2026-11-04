@@ -1,0 +1,26 @@
+# ProvaDent
+
+> ProvaDent is a Oral Health & Dental Wellness Supplement. ProvaDent is a daily oral wellness supplement marketed through its official website as a simple way to support healthy teeth, gums and overall mouth freshness. Rather than replacing brushing and flossing, it is positioned as an add-on to your existing routine — a capsule-style formula intended to be taken once a day alongside normal dental care. The official site is the place to review the full ingredient list, package pricing and current promotional offers before ordering.
+
+## Pages
+- [Home — overview, pricing and FAQ](https://provadent.onrender.com/)
+- [What ProvaDent is](https://provadent.onrender.com/what-is-product.html)
+- [How ProvaDent works](https://provadent.onrender.com/how-it-works.html)
+- [ProvaDent ingredients, explained individually](https://provadent.onrender.com/ingredients.html)
+- [ProvaDent benefits](https://provadent.onrender.com/benefits.html)
+- [ProvaDent customer reviews](https://provadent.onrender.com/reviews.html)
+- [ProvaDent frequently asked questions](https://provadent.onrender.com/faq.html)
+
+## Blog
+- [What To Know Before Trying ProvaDent](https://provadent.onrender.com/blog/what-to-know-before-trying.html): A clear, honest look at ProvaDent — what it contains, how it is used, what it costs, and the guarantee behind it — before you decide to order.
+- [How To Read A Supplement Label](https://provadent.onrender.com/blog/how-to-read-a-supplement-label.html): Serving size, proprietary blends and other ingredients explained — using ProvaDent's own label as a real example of what to look for.
+- [ProvaDent: An Honest Review](https://provadent.onrender.com/blog/provadent-honest-review.html): An honest look at ProvaDent — what it claims to do, what it actually contains, what it costs, and who it is realistically a good fit for.
+- [Probiotic Blend for Oral Flora vs Calcium: What Each Does In ProvaDent](https://provadent.onrender.com/blog/probiotic-blend-for-oral-flora-vs-calcium.html): Probiotic Blend for Oral Flora and Calcium are both in ProvaDent but play different roles — here is what each one actually does in the formula.
+- [Daily Habits That Complement ProvaDent](https://provadent.onrender.com/blog/daily-habits-that-complement-it.html): Simple daily habits — hydration, timing, consistency — that pair well with ProvaDent as part of a oral health & dental wellness routine.
+- [ProvaDent FAQ: Dosage, Timing, Who Should Skip It](https://provadent.onrender.com/blog/provadent-faq.html): Common questions about ProvaDent — dosage, timing, the guarantee, and who should skip it — answered directly.
+- [Terms of Use](https://provadent.onrender.com/terms.html)
+- [Privacy Policy](https://provadent.onrender.com/privacy-policy.html)
+- [Disclaimer](https://provadent.onrender.com/disclaimer.html)
+- [Refund Policy](https://provadent.onrender.com/refund-policy.html)
+- [About Us](https://provadent.onrender.com/about.html)
+- [Contact Us](https://provadent.onrender.com/contact.html)

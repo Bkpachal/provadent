@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /order/
+Sitemap: https://provadent.onrender.com/sitemap.xml
